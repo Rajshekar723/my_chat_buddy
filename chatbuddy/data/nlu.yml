@@ -96,9 +96,13 @@ nlu:
     - motivate me
     - tell me some quotes 
 
-- intent: pomodoro
+- intent: joke
   examples: |
-  - start pomodoro
-  - i want to do pomodoro
-  - pomodoro pls
+    - tell me a joke
+    - i want a joke
+
+- intent: coin
+  examples: |
+    - flip a coin
+    - toss a coin
   

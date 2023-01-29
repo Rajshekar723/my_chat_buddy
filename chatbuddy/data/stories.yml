@@ -36,9 +36,17 @@ stories:
   - intent: motiv
   - action: action_motiv
 
-- story: pomo
+- story: tell a joke
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: pomodoro
-  - action: action_pomodoro
+  - intent: joke
+  - action: action_joke
+
+- story: flipping coin
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: coin
+  - action: action_coin
+

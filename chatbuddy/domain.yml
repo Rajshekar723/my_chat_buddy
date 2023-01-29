@@ -9,11 +9,13 @@ intents:
   - mood_unhappy
   - bot_challenge
   - motiv
-  - pomodoro
+  - joke
+  - coin
 
 actions:
   - action_motiv
-  - action_pomodoro
+  - action_joke
+  - action_coin
 
 responses:
   utter_greet:

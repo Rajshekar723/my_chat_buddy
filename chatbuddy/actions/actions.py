@@ -10,6 +10,8 @@
 from typing import Any, Text, Dict, List
 
 import random
+import time
+import winsound
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
@@ -71,4 +73,45 @@ class ActionHelloWorld(Action):
 
         random_element = random.choice(quotes)
         dispatcher.utter_message(text=random_element)
+        return []
+
+class Actionjoke(Action):
+
+    def name(self) -> Text:
+        return "action_joke"
+
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    
+        jokes = [
+        "Why don't scientists trust atoms? Because they make up everything.",
+        "What do you call a bear with no teeth? A gummy bear.",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "Why did the chicken cross the road? To get to the other side.",
+        "Why did the banana go to the doctor? Because it wasn't peeling well."
+        ]
+
+        random_joke= random.choice(jokes)
+        dispatcher.utter_message(text=random_joke)
+        return []
+
+class Actioncoin(Action):
+
+    def name(self) -> Text:
+        return "action_coin"
+
+    def run(self, dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        def flip_coin():
+            time.sleep(2)
+            if random.random() < 0.5:
+                return "heads"
+            else:
+                return "tails"
+
+        result = flip_coin()
+        dispatcher.utter_message(text=result)
         return []
